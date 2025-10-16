@@ -4,27 +4,28 @@ export default {
   title: "ZeroTermux Wiki",
   description: "A wiki for ZeroTermux.",
 
-  // --- 添加这一行来开启“干净链接”功能 ---
+  // --- Cloudflare Pages 部署时使用的基础路径 ---
+  // ⚠️ 如果你是直接部署在根路径（比如 https://wiki.ixcm.org/），请保持为 "/"
+  // ⚠️ 如果是子路径（例如 https://ixcmstudio.pages.dev/zerotermux/），请改为 "/zerotermux/"
+  base: "/",
+
+  // --- 开启干净链接（去掉 .html） ---
   cleanUrls: true,
 
   // --- 主题配置 ---
   themeConfig: {
-    // 网站 Logo (可选)
     logo: '/logo.png',
 
-    // 顶部导航栏
     nav: [
       { text: '首页', link: '/' },
       { text: '功能指南', link: '/features/common/source-switching' },
       { text: '在线功能', link: '/online/scripts' },
     ],
 
-    // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ixcmstudio/zerotermux-wiki' }
     ],
 
-    // 侧边栏
     sidebar: [
       {
         text: '入门指南',
@@ -47,7 +48,6 @@ export default {
           { text: 'ZT设置', link: '/features/common/zt-settings' },
         ]
       },
-      // ... 其他侧边栏项目保持不变 ...
       {
         text: 'X11 功能',
         collapsed: true,
@@ -98,7 +98,6 @@ export default {
       }
     ],
 
-    // 页脚
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © IXCMSTUDIO'
