@@ -3,7 +3,7 @@
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen.svg)](https://wiki.zerotermux.dev/)
 [![Powered by VitePress](https://img.shields.io/badge/Powered%20by-VitePress-blueviolet)](https://vitepress.dev/)
 
-欢迎来到 ZeroTermux Wiki 的官方源码仓库！本文档库旨在为 [ZeroTermux](https://github.com/YourGitHub/ZeroTermux) 用户提供全面、准确的指南、教程和常见问题解答。
+欢迎来到 ZeroTermux Wiki 的官方源码仓库！本文档库旨在为 [ZeroTermux](https://github.com/hanxinhao000/ZeroTermux) 用户提供全面、准确的指南、教程和常见问题解答。
 
 **在线访问 👉 [https://wiki.zerotermux.dev/](https://wiki.zerotermux.dev/)**
 
