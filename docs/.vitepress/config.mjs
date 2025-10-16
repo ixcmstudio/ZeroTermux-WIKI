@@ -4,25 +4,27 @@ export default {
   title: "ZeroTermux Wiki",
   description: "A wiki for ZeroTermux.",
 
+  // --- 添加这一行来开启“干净链接”功能 ---
+  cleanUrls: true,
+
   // --- 主题配置 ---
   themeConfig: {
-    // 网站 Logo (可选, 如果没有图片可以暂时删除此行)
-    // 图片需放置在 docs/.vitepress/public/logo.png
+    // 网站 Logo (可选)
     logo: '/logo.png',
 
-    // 顶部导航栏 (Nav)
+    // 顶部导航栏
     nav: [
       { text: '首页', link: '/' },
       { text: '功能指南', link: '/features/common/source-switching' },
       { text: '在线功能', link: '/online/scripts' },
     ],
 
-    // 社交链接 (已更新)
+    // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ixcmstudio/zerotermux-wiki' }
     ],
 
-    // 侧边栏 (Sidebar) - 完整的目录结构
+    // 侧边栏
     sidebar: [
       {
         text: '入门指南',
@@ -33,7 +35,7 @@ export default {
       },
       {
         text: '常用功能',
-        collapsed: false, // 默认展开此分组
+        collapsed: false,
         items: [
           { text: '切换源', link: '/features/common/source-switching' },
           { text: '容器切换', link: '/features/common/container-switching' },
@@ -45,9 +47,10 @@ export default {
           { text: 'ZT设置', link: '/features/common/zt-settings' },
         ]
       },
+      // ... 其他侧边栏项目保持不变 ...
       {
         text: 'X11 功能',
-        collapsed: true, // 默认折叠此分组
+        collapsed: true,
         items: [
           { text: 'X11设置', link: '/features/x11/settings' },
           { text: '显示/隐藏终端', link: '/features/x11/toggle-terminal' },
@@ -59,7 +62,7 @@ export default {
       },
       {
         text: '美化/UI 功能',
-        collapsed: true, // 默认折叠此分组
+        collapsed: true,
         items: [
           { text: '悬浮窗口', link: '/features/ui/floating-window' },
           { text: '美化设置', link: '/features/ui/beautify-settings' },
@@ -71,7 +74,7 @@ export default {
       },
       {
         text: 'ZT 功能',
-        collapsed: true, // 默认折叠此分组
+        collapsed: true,
         items: [
           { text: 'Zero功能', link: '/features/zt/zero-functions' },
           { text: 'VNC', link: '/features/zt/vnc' },
@@ -85,7 +88,7 @@ export default {
       },
       {
         text: '线上功能',
-        collapsed: false, // 默认展开此分组
+        collapsed: false,
         items: [
           { text: '在线脚本', link: '/online/scripts' },
           { text: 'Zero论坛', link: '/online/forum' },
@@ -95,7 +98,7 @@ export default {
       }
     ],
 
-    // 页脚配置 (已更新)
+    // 页脚
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © IXCMSTUDIO'
