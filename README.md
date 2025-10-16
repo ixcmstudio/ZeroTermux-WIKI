@@ -70,4 +70,4 @@
 
 ## 📄 许可证
 
-本项目下的所有文档内容均采用 [MIT License](LICENSE) 授权。
+本项目下的所有文档内容均采用 MIT License 授权。
