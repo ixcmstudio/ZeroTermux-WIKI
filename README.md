@@ -2,7 +2,6 @@
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen.svg)](https://wiki.zerotermux.dev/)
 [![Powered by VitePress](https://img.shields.io/badge/Powered%20by-VitePress-blueviolet)](https://vitepress.dev/)
-[![Deployed on Cloudflare](https://img.shields.io/badge/Deployed%20on-Cloudflare%20Pages-orange)](https://pages.cloudflare.com/)
 
 欢迎来到 ZeroTermux Wiki 的官方源码仓库！本文档库旨在为 [ZeroTermux](https://github.com/YourGitHub/ZeroTermux) 用户提供全面、准确的指南、教程和常见问题解答。
 
@@ -10,7 +9,7 @@
 
 ## 📖 关于此项目
 
-本 Wiki 使用 [VitePress](https://vitepress.dev/) 构建，并托管在 [Cloudflare Pages](https://pages.cloudflare.com/) 上。所有内容的源文件都存放在本 GitHub 仓库的 `docs` 目录下。
+本 Wiki 使用 [VitePress](https://vitepress.dev/) 构建，所有内容的源文件都存放在本 GitHub 仓库的 `docs` 目录下。
 
 我们致力于打造一个开放、协作的知识库，帮助用户更好地使用 ZeroTermux。
 
