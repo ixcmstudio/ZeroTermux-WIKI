@@ -5,36 +5,27 @@ export default {
   description: "A wiki for ZeroTermux.",
 
   // --- 核心功能配置 ---
-  cleanUrls: true,
-  ignoreDeadLinks: true,
-
-  // --- 终极解决方案：添加路径重写规则 ---
-  rewrites: {
-    'features/common/:page': 'features/common/:page/index',
-    'features/x11/:page': 'features/x11/:page/index',
-    'features/ui/:page': 'features/ui/:page/index',
-    'features/zt/:page': 'features/zt/:page/index',
-    'online/:page': 'online/:page/index',
-    'guide/:page': 'guide/:page/index',
-  },
+  cleanUrls: true,        // 这个现在会正常工作
+  ignoreDeadLinks: true,  // 暂时保留，以防万一
 
   // --- 主题配置 ---
   themeConfig: {
     logo: '/logo.png',
 
+    // 顶部导航栏
     nav: [
       { text: '首页', link: '/' },
       { text: '功能指南', link: '/features/common/source-switching' },
       { text: '在线功能', link: '/online/scripts' },
     ],
 
+    // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ixcmstudio/zerotermux-wiki' }
     ],
 
-    // 侧边栏 (保持不变)
+    // 侧边栏
     sidebar: [
-      // ... 您的侧边栏代码 ...
       {
         text: '入门指南',
         items: [
@@ -73,7 +64,7 @@ export default {
         collapsed: true,
         items: [
           { text: '悬浮窗口', link: '/features/ui/floating-window' },
-          { text: '美化设置', link: '/features/ui/beautify-settings' },
+          { text: '美化设置', link: 'features/ui/beautify-settings' },
           { text: '字体设置', link: '/features/ui/font-settings' },
           { text: '全屏模式', link: '/features/ui/fullscreen-mode' },
           { text: '雪花/粒子动画', link: '/features/ui/animations' },
