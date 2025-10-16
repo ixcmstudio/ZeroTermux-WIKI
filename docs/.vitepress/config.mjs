@@ -1,29 +1,40 @@
+// .vitepress/config.mjs
 export default {
   // --- 基础信息 ---
   title: "ZeroTermux Wiki",
   description: "A wiki for ZeroTermux.",
-  base: "/",             // Cloudflare Pages 根路径
-  cleanUrls: true,       // 去掉 URL 中的 .html
-  ignoreDeadLinks: true, // ✅ 忽略死链检查
+
+  // --- 核心功能配置 ---
+  cleanUrls: true,
+  ignoreDeadLinks: true,
+
+  // --- 终极解决方案：添加路径重写规则 ---
+  rewrites: {
+    'features/common/:page': 'features/common/:page/index',
+    'features/x11/:page': 'features/x11/:page/index',
+    'features/ui/:page': 'features/ui/:page/index',
+    'features/zt/:page': 'features/zt/:page/index',
+    'online/:page': 'online/:page/index',
+    'guide/:page': 'guide/:page/index',
+  },
 
   // --- 主题配置 ---
   themeConfig: {
     logo: '/logo.png',
 
-    // 顶部导航栏
     nav: [
       { text: '首页', link: '/' },
       { text: '功能指南', link: '/features/common/source-switching' },
       { text: '在线功能', link: '/online/scripts' },
     ],
 
-    // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ixcmstudio/zerotermux-wiki' }
     ],
 
-    // 侧边栏
+    // 侧边栏 (保持不变)
     sidebar: [
+      // ... 您的侧边栏代码 ...
       {
         text: '入门指南',
         items: [
