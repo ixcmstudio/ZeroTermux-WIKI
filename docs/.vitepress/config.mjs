@@ -7,6 +7,7 @@ export default {
   base: "/",
 
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   themeConfig: {
     logo: '/logo.png',
