@@ -20,10 +20,7 @@
 ### 步骤二：下载最新版 APK
 
 1.  打开您手机上的任意浏览器（如 Chrome, Firefox 等）。
-2.  访问 ZeroTermux 官方最新版获取地址：
-    ```
-    [https://get.zerotermux.dev/](https://get.zerotermux.dev/)
-    ```
+2.  访问 ZeroTermux 官方最新版获取地址：[get.zerotermux.dev](https://get.zerotermux.dev/)
 3.  浏览器将自动开始下载最新版本的 `.apk` 安装包。
 
 ### 步骤三：安装 ZeroTermux
@@ -38,4 +35,4 @@
 
 * `https://get.zerotermux.dev/` 是获取最新版本的唯一官方推荐链接，该链接始终指向最新的稳定版本。
 * 重复强调：**必须** 卸载 Termux ，这是确保 ZeroTermux 正常安装的最重要前提。
-* 安装完成后请务必查看下一个教程以完成首次启动
+* 安装完成后请务必查看下一个教程以完成首次启动！
