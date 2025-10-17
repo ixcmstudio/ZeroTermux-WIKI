@@ -48,7 +48,7 @@
 
 1.  **克隆你的 Fork 仓库到本地**
     ```bash
-    git clone [https://github.com/你的用户名/zerotermux-wiki.git](https://github.com/你的用户名/zerotermux-wiki.git)
+    git clone https://github.com/你的用户名/zerotermux-wiki.git
     ```
 
 2.  **进入项目目录**
