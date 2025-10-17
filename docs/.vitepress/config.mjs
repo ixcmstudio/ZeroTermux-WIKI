@@ -19,8 +19,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '功能指南', link: '/features/common/source-switching' },
-      { text: '在线功能', link: '/online/scripts' }
+      { text: '功能指南', link: '/features/common/source-switching' }
     ],
 
     socialLinks: [
