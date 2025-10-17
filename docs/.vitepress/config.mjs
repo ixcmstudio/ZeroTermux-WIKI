@@ -1,30 +1,34 @@
-// .vitepress/config.mjs
-export default {
-  // --- 基础信息 ---
-  title: "ZeroTermux Wiki",
-  description: "A wiki for ZeroTermux.",
+// ...existing code...
+import { defineConfig } from 'vitepress'
 
-  // --- 核心功能配置 ---
-  cleanUrls: true,        // 这个现在会正常工作
-  ignoreDeadLinks: true,  // 暂时保留，以防万一
+export default defineConfig({
+  // --- 基础信息 ---
+  title: 'ZeroTermux Wiki',
+  description: 'A wiki for ZeroTermux.',
+
+  // 部署根路径：如果你把站点部署到 GitHub Pages 仓库子目录（例如
+  // https://<user>.github.io/zerotermux-wiki/），请保留 '/zerotermux-wiki/'。
+  // 若部署在根域名（如 username.github.io 或自定义域名），请改为 '/'。
+  base: '/zerotermux-wiki/',
+
+  // --- 核心配置 ---
+  cleanUrls: true,
+  ignoreDeadLinks: true,
 
   // --- 主题配置 ---
   themeConfig: {
     logo: '/logo.png',
 
-    // 顶部导航栏
     nav: [
       { text: '首页', link: '/' },
       { text: '功能指南', link: '/features/common/source-switching' },
-      { text: '在线功能', link: '/online/scripts' },
+      { text: '在线功能', link: '/online/scripts' }
     ],
 
-    // 社交链接
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ixcmstudio/zerotermux-wiki' }
     ],
 
-    // 侧边栏
     sidebar: [
       {
         text: '入门指南',
@@ -44,7 +48,7 @@ export default {
           { text: '发行版本', link: '/features/common/linux-distros' },
           { text: 'QEMU', link: '/features/common/qemu' },
           { text: '定时任务', link: '/features/common/scheduled-tasks' },
-          { text: 'ZT设置', link: '/features/common/zt-settings' },
+          { text: 'ZT设置', link: '/features/common/zt-settings' }
         ]
       },
       {
@@ -56,7 +60,7 @@ export default {
           { text: 'X11环境', link: '/features/x11/environment' },
           { text: '修复环境错误', link: '/features/x11/fix-errors' },
           { text: '安装X11', link: '/features/x11/install' },
-          { text: '显示/隐藏键盘', link: '/features/x11/toggle-keyboard' },
+          { text: '显示/隐藏键盘', link: '/features/x11/toggle-keyboard' }
         ]
       },
       {
@@ -64,11 +68,11 @@ export default {
         collapsed: true,
         items: [
           { text: '悬浮窗口', link: '/features/ui/floating-window' },
-          { text: '美化设置', link: 'features/ui/beautify-settings' },
+          { text: '美化设置', link: '/features/ui/beautify-settings' },
           { text: '字体设置', link: '/features/ui/font-settings' },
           { text: '全屏模式', link: '/features/ui/fullscreen-mode' },
           { text: '雪花/粒子动画', link: '/features/ui/animations' },
-          { text: '视频背景', link: '/features/ui/video-background' },
+          { text: '视频背景', link: '/features/ui/video-background' }
         ]
       },
       {
@@ -82,7 +86,7 @@ export default {
           { text: '打开目录', link: '/features/zt/open-directory' },
           { text: '开机启动', link: '/features/zt/startup' },
           { text: '实验功能', link: '/features/zt/experimental' },
-          { text: '语言切换', link: '/features/zt/language-switching' },
+          { text: '语言切换', link: '/features/zt/language-switching' }
         ]
       },
       {
@@ -92,15 +96,14 @@ export default {
           { text: '在线脚本', link: '/online/scripts' },
           { text: 'Zero论坛', link: '/online/forum' },
           { text: '下载站', link: '/online/downloads' },
-          { text: '公共仓库', link: '/online/public-repo' },
+          { text: '公共仓库', link: '/online/public-repo' }
         ]
       }
     ],
 
-    // 页脚
     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © IXCMSTUDIO'
+      message: 'Released under the MIT License.'
     }
   }
-}
+})
+// ...existing code...
