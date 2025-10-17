@@ -30,9 +30,6 @@
 
 - 如果您在使用过程中遇到任何问题，欢迎访问我们的[社区支持页面](https://wiki.zerotermux.dev/support)寻求帮助。
   
-::: tips
-  您还可以参考：
-
+- 您还可以参考：
   - [清华大学开源软件镜像站 - Termux 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/termux/)
   - [校园网联合镜像站 - Termux 软件仓库镜像使用帮助](https://help.mirrors.cernet.edu.cn/termux/)
-:::
