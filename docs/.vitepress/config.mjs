@@ -1,4 +1,4 @@
-// ...existing code...
+// .vitepress/config.mjs
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -6,10 +6,8 @@ export default defineConfig({
   title: 'ZeroTermux Wiki',
   description: 'A wiki for ZeroTermux.',
 
-  // 部署根路径：如果你把站点部署到 GitHub Pages 仓库子目录（例如
-  // https://<user>.github.io/zerotermux-wiki/），请保留 '/zerotermux-wiki/'。
-  // 若部署在根域名（如 username.github.io 或自定义域名），请改为 '/'。
-  base: '/zerotermux-wiki/',
+  // 部署根路径：改为 '/' 因为您部署在自定义域名的根目录
+  base: '/',
 
   // --- 核心配置 ---
   cleanUrls: true,
@@ -34,7 +32,8 @@ export default defineConfig({
         text: '入门指南',
         items: [
           { text: '快速开始', link: '/guide/getting-started' },
-          { text: '安装教程', link: '/guide/installation' }
+          { text: '安装教程', link: '/guide/installation' },
+          { text: '首次启动与其的故障排除', link: '/guide/first-install-error' }
         ]
       },
       {
@@ -64,6 +63,16 @@ export default defineConfig({
         ]
       },
       {
+        text: '线上功能',
+        collapsed: false,
+        items: [
+          { text: '在线脚本', link: '/online/scripts' },
+          { text: 'Zero论坛', link: '/online/forum' },
+          { text: '下载站', link: '/online/downloads' },
+          { text: '公共仓库', link: '/online/public-repo' }
+        ]
+      },
+      {
         text: '美化/UI 功能',
         collapsed: true,
         items: [
@@ -88,16 +97,6 @@ export default defineConfig({
           { text: '实验功能', link: '/features/zt/experimental' },
           { text: '语言切换', link: '/features/zt/language-switching' }
         ]
-      },
-      {
-        text: '线上功能',
-        collapsed: false,
-        items: [
-          { text: '在线脚本', link: '/online/scripts' },
-          { text: 'Zero论坛', link: '/online/forum' },
-          { text: '下载站', link: '/online/downloads' },
-          { text: '公共仓库', link: '/online/public-repo' }
-        ]
       }
     ],
 
@@ -106,4 +105,3 @@ export default defineConfig({
     }
   }
 })
-// ...existing code...
