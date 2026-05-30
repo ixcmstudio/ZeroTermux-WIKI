@@ -19,7 +19,8 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '功能指南', link: '/features/common/source-switching' }
+      { text: '功能指南', link: '/features/common/source-switching' },
+      { text: '开发者', link: '/developer/' }
     ],
 
     socialLinks: [
@@ -95,6 +96,23 @@ export default defineConfig({
           { text: '开机启动', link: '/features/zt/startup' },
           { text: '实验功能', link: '/features/zt/experimental' },
           { text: '语言切换', link: '/features/zt/language-switching' }
+        ]
+      },
+      {
+        text: '开发者文档',
+        collapsed: false,
+        items: [
+          { text: '开发者总览', link: '/developer/' },
+          { text: '从 0 开始', link: '/developer/from-zero' },
+          { text: '构建与发布', link: '/developer/build-and-release' },
+          { text: '项目结构', link: '/developer/project-structure' },
+          { text: '运行架构', link: '/developer/runtime-architecture' },
+          { text: '功能开发入口', link: '/developer/feature-entrypoints' },
+          { text: '左侧菜单系统', link: '/developer/main-menu' },
+          { text: 'zt 命令系统', link: '/developer/zt-command' },
+          { text: '资源与数据目录', link: '/developer/resources-and-storage' },
+          { text: '调试与排错', link: '/developer/debugging' },
+          { text: '给 AI 编程工具看', link: '/developer/ai-coding-tools' }
         ]
       }
     ],

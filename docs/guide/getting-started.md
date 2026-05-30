@@ -7,6 +7,7 @@
 
 ## 📘 入门
 - [安装教程](/guide/installation)
+- [首次启动与故障排除](/guide/first-install-error)
 
 ---
 
