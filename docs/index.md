@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "ZeroTermux Wiki"
+  name: "ZeroTermux教程 - ZeroTermux WIKI"
   text: "一个为 ZeroTermux 打造的知识库"
   tagline: 在这里找到你需要的全部信息。
   actions:

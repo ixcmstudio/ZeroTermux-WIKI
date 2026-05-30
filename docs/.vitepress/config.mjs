@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   // --- 基础信息 ---
-  title: 'ZeroTermux Wiki',
+  title: 'ZeroTermux教程 - ZeroTermux WIKI',
   description: 'A wiki for ZeroTermux.',
 
   // 部署根路径：改为 '/' 因为您部署在自定义域名的根目录
