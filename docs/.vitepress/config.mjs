@@ -16,6 +16,7 @@ export default defineConfig({
   // --- 主题配置 ---
   themeConfig: {
     logo: '/logo.png',
+    siteTitle: 'ZeroTermux WIKI',
 
     nav: [
       { text: '首页', link: '/' },
