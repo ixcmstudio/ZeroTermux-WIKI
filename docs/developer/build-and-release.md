@@ -1,8 +1,8 @@
 # 构建与发布
 
-这页先讲清楚一件事：ZeroTermux 的“能编译”和“能发包”不是一回事。它有签名、bootstrap、ABI、X11 AAR、loader APK、环境变量这些东西，少看一项都可能让包装出来却跑不起来。
+ZeroTermux 发包时要同时检查签名、bootstrap、ABI、X11 AAR、loader APK 和相关环境变量。只跑通编译还不够。
 
-如果只是本地开发，先打 debug 包。要发给别人用，再认真看签名和发布前检查。
+本地开发通常打 debug 包即可。准备发给别人使用时，再按发布前检查走一遍。
 
 ## Gradle 模块
 
@@ -153,7 +153,7 @@ nightly-termux-x11-aar-zt
 
 ## 发布前检查
 
-发布前别只看 Gradle 成功。至少走一遍：
+发布前至少检查：
 
 1. `./gradlew :app:assembleRelease` 能通过。
 2. 全新安装后首次启动流程能走完。

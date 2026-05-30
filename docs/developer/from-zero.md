@@ -1,6 +1,6 @@
 # 从 0 开始
 
-这页按真实接手项目的顺序写。先把代码拉下来，能编译，能装到手机，能跑过首次引导。做到这一步之前，先别急着改功能。
+先把代码拉下来，完成一次构建，装到手机上跑过首次引导。后面改功能时，很多问题都和这一步的环境、权限、目录有关。
 
 ## 1. 拉取项目
 
@@ -17,7 +17,7 @@ git clone https://github.com/ixcmstudio/ZeroTermux-WIKI.git
 
 ## 2. 准备环境
 
-项目比较吃 Android 工具链版本。建议先按下面的版本来，跑通以后再考虑升级。
+先按项目当前配置准备环境，跑通以后再考虑升级工具链。
 
 | 工具 | 建议 |
 | --- | --- |
@@ -28,7 +28,7 @@ git clone https://github.com/ixcmstudio/ZeroTermux-WIKI.git
 | Gradle | 使用项目自带 `gradlew` |
 | Git | 用于拉取和提交代码 |
 
-这些版本不是猜的，配置就在这些文件里：
+版本配置在这些文件里：
 
 ```text
 gradle/wrapper/gradle-wrapper.properties
@@ -55,7 +55,7 @@ app/build.gradle
 1. 用 Android Studio 打开 `ZeroTermux` 根目录。
 2. 等待 Gradle Sync。
 3. 如果提示缺少 SDK/NDK，按 IDE 提示安装。
-4. 不要看到 IDE 提示“可升级”就一路点。这个项目里有 NDK、bootstrap、AAR、本地 jar/aar，先保证原配置能跑。
+4. IDE 提示升级依赖时先跳过。项目里有 NDK、bootstrap、AAR、本地 jar/aar，先保证原配置能跑。
 
 ## 4. 第一次构建
 
@@ -80,7 +80,7 @@ bootstrap-i686.zip
 bootstrap-x86_64.zip
 ```
 
-如果这里失败，通常不是代码错，是 GitHub 下载、代理、DNS 或校验问题。先看报错 URL，别急着改 Gradle 脚本。
+如果这里失败，先看报错 URL、代理、DNS 和校验信息，再判断是否需要改 Gradle 脚本。
 
 ## 5. 安装到设备
 
@@ -96,7 +96,7 @@ app/build/outputs/apk/
 
 ## 6. 第一次跑起来
 
-首次打开不是直接进 `TermuxActivity`，而是进引导页：
+首次打开会进入引导页：
 
 ```text
 com.termux.zerocore.guide.TermuxGuideActivity
@@ -108,11 +108,11 @@ com.termux.zerocore.guide.TermuxGuideActivity
 com.termux.app.TermuxActivity
 ```
 
-首次运行会安装 bootstrap、创建目录、申请存储权限。这里不要为了“快点进主界面”随便跳过。很多功能默认依赖 `/sdcard/xinhao`，目录没创建，后面备份、QEMU、字体、自定义命令都会出怪问题。
+首次运行会安装 bootstrap、创建目录、申请存储权限。很多功能默认依赖 `/sdcard/xinhao`，目录没创建时，备份、QEMU、字体、自定义命令都会受影响。
 
-## 7. 第一次改代码，建议从小地方下手
+## 7. 第一次改代码
 
-优先从小入口开始：
+适合先改这些位置：
 
 - 改一个菜单项：看 [左侧菜单系统](/developer/main-menu)。
 - 改 `zt` 命令：看 [`zt` 命令系统](/developer/zt-command)。
@@ -120,7 +120,7 @@ com.termux.app.TermuxActivity
 - 改布局：先找 `app/src/main/res/layout/` 对应 XML。
 - 改脚本资源：看 `app/src/main/assets/`。
 
-这些地方先别急着动：
+这些位置影响面比较大，改之前先查清调用关系：
 
 - `TermuxActivity.java`
 - `TermuxService.java`
@@ -128,7 +128,7 @@ com.termux.app.TermuxActivity
 - 签名配置
 - 包名和 sharedUserId
 
-它们不是不能改，而是改之前要先知道影响范围。尤其是包名、sharedUserId、bootstrap、签名，动错了可能直接影响安装、升级和 Termux 插件兼容。
+尤其是包名、sharedUserId、bootstrap、签名，改错后会影响安装、升级和 Termux 插件兼容。
 
 ## 8. 一个比较稳的改动流程
 
@@ -140,4 +140,4 @@ com.termux.app.TermuxActivity
 6. 如果涉及终端命令，再在终端里手动跑一遍。
 7. 如果涉及文档，顺手补 Wiki。
 
-ZeroTermux 这种项目，编译通过只算过了第一关。很多问题只有真机、权限、存储路径、首次引导、后台限制一起出现时才会暴露。
+编译通过后还要做真机检查。权限、存储路径、首次引导、后台限制这些问题通常在设备上才会出现。

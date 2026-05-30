@@ -1,6 +1,6 @@
 # 运行架构
 
-这页不是画漂亮架构图用的，主要是帮你判断一个功能到底该放在哪一层。ZeroTermux 里很多问题不是“不会写代码”，而是把 Android 侧、终端侧、assets 脚本和外部存储混着改。
+这页用于判断功能属于哪一层：Android 侧、终端侧、assets 脚本、外部存储，还是 Termux 原有能力。改动前先把层次分清楚。
 
 ## 启动链路
 
@@ -10,7 +10,7 @@
 com.termux.zerocore.guide.TermuxGuideActivity
 ```
 
-也就是说，启动器图标首先进入 ZeroTermux 的引导页，而不是原版 Termux 的 `TermuxActivity`。
+启动器图标首先进入 ZeroTermux 的引导页，之后再进入 `TermuxActivity`。
 
 典型流程：
 
@@ -48,7 +48,7 @@ app/src/main/java/com/termux/app/TermuxActivity.java
 app/src/main/java/com/termux/app/TermuxService.java
 ```
 
-它负责维护终端会话、运行 Shell、管理前台服务通知等。多数功能如果要“向终端输入命令”，不应该自己新开进程，而是通过现有通信工具把命令发送到当前会话。
+它负责维护终端会话、运行 Shell、管理前台服务通知等。功能需要向终端输入命令时，优先通过现有通信工具发送到当前会话。
 
 常见调用方式可在菜单项里看到：
 
@@ -107,12 +107,12 @@ app/src/main/java/com/termux/zerocore/
 /sdcard/xinhao/
 ```
 
-首次引导会创建该目录。如果开发时清数据、重装或卸载后发现功能失效，先确认目录和权限，而不是直接怀疑功能代码。
+首次引导会创建该目录。清数据、重装或卸载后功能失效时，先确认目录和权限。
 
-## 修改建议
+## 修改入口
 
-- 改启动流程：先看 `guide/` 和 Manifest，不要直接把 Launcher 切回 `TermuxActivity`。
-- 改终端主界面：先搜索 `TermuxActivity` 中对应 UI 或回调，不要直接重写生命周期。
+- 改启动流程：先看 `guide/` 和 Manifest。
+- 改终端主界面：先搜索 `TermuxActivity` 中对应 UI 或回调。
 - 改后台执行：先看 `TermuxService`、`RunCommandService`、`TimerExeService`。
 - 改菜单入口：先看 `MainMenuConfig`，顺着 `ClickConfig` 追。
-- 改终端命令：先看 `ZTCommandConfigStore`，别只改 shell 脚本。
+- 改终端命令：先看 `ZTCommandConfigStore`，同时检查 shell 脚本。

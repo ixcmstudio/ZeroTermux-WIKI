@@ -1,6 +1,6 @@
 # 资源与数据目录
 
-ZeroTermux 很多功能不是“纯 Android 代码”。它会把 APK 里的脚本复制到 Termux 环境，会读写 `/sdcard/xinhao`，也会碰 `$PREFIX/usr/bin`。路径没搞清楚，功能就会表现得像随机坏。
+ZeroTermux 会把 APK 里的脚本复制到 Termux 环境，也会读写 `/sdcard/xinhao` 和 `$PREFIX/usr/bin`。改涉及文件的功能时，先确认路径属于哪一类。
 
 ## 路径集中管理
 
@@ -115,4 +115,4 @@ RECEIVE_BOOT_COMPLETED
 - 用户拒绝权限后的提示。
 - Android 版本差异。
 
-一句话：不要在功能代码里凭感觉拼路径。先看 `FileUrl.kt`，没有再加。
+新增路径前先看 `FileUrl.kt`，已有路径尽量复用。

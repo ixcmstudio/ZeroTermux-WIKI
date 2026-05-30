@@ -1,6 +1,6 @@
 # 左侧菜单系统
 
-ZeroTermux 的左侧菜单就是很多功能的“总电闸”。用户说“点某个功能没反应”，大概率先从这里查。想新增一个用户能点到的功能，也优先接进这套系统。
+ZeroTermux 的多数功能都从左侧菜单进入。用户反馈某个功能点了没反应，通常先从这里查。新增用户可点击的功能，也优先接入这套系统。
 
 ## 核心文件
 
@@ -31,7 +31,7 @@ CODE_ZT_CONFIG
 
 每个分类创建一个 `ArrayList<MainMenuClickConfig>`，然后加入 `MAIN_MENU_CATEGORY_DATAS`。
 
-## 一个菜单项长什么样
+## 菜单项示例
 
 菜单项通常继承 `BaseMenuClickConfig`：
 
@@ -116,12 +116,12 @@ zt menu reset
 
 如果 XML 配置出错，应用会提示 XML 格式不正确，并允许打开编辑器修改。
 
-## 注意事项
+## 开发注意
 
-- 菜单项里不要长时间阻塞 UI 线程。
+- 菜单项里避免长时间阻塞 UI 线程。
 - 需要权限时用已有权限工具申请，例如 `XXPermissions`。
-- 文件路径尽量走 `FileUrl.kt`，不要散写硬编码。
-- 菜单文案要放入资源文件，避免直接写死中文。
+- 文件路径尽量走 `FileUrl.kt`，减少散落的硬编码。
+- 菜单文案放入资源文件，避免直接写死中文。
 - 如果功能要兼容 XML 菜单，注意 `getXmlString()` 和 `setXmlName()`。
 - 如果只是向终端发送一条脚本命令，优先复用现有 `SingletonCommunicationUtils` 模式。
 - 如果功能需要复制脚本到 home，先确认 assets 里资源路径正确。

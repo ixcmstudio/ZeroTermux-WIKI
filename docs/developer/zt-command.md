@@ -1,6 +1,6 @@
 # `zt` 命令系统
 
-`zt` 不是普通的 alias。它是终端侧和 Android 侧之间的一条通道。终端里敲 `zt xxx`，最后可能会打开一个 Android 弹窗、控制 X11、调 VNC，或者让主界面做动作。
+`zt` 是终端侧和 Android 侧之间的通道。终端里执行 `zt xxx` 后，可能会打开 Android 弹窗、控制 X11、调用 VNC，或者让主界面执行动作。
 
 ## 核心文件
 
@@ -115,7 +115,7 @@ zt ex
 
 如果提示“不支持或ZT版本低不识别”，说明命令没有注册成功，优先检查 `ZTCommandConfigStore`。
 
-## 常见坑
+## 常见问题
 
 - 只写了 `ZTConfig`，忘了在 `ZTCommandConfigStore` 注册。
 - 注册了长命令，忘了注册短命令。

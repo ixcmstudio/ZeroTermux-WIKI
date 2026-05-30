@@ -1,6 +1,6 @@
 # 功能开发入口
 
-想改功能时先来这页查入口。不要一上来全局搜中文文案然后就改，因为很多功能的真正动作在 `ClickConfig`、`CodeString`、assets 脚本和 Activity 之间分了几段。
+改功能前先查入口。很多功能会分布在 `ClickConfig`、`CodeString`、assets 脚本和 Activity 之间，只改文案或单个类通常不够。
 
 ## 常用功能
 
@@ -87,4 +87,4 @@
 5. 如果涉及路径，查 `FileUrl.kt`。
 6. 如果涉及文案，查 `values-zh-rCN/strings.xml`。
 7. 如果涉及权限，查 Manifest 和对应运行时权限申请。
-8. 改完后按用户实际点击路径验证，不要只验证某个类能编译。
+8. 改完后按用户实际点击路径验证。

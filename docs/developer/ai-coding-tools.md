@@ -1,13 +1,13 @@
 # 给 AI 编程工具看的文档
 
-这一页给 Codex、Cursor、Claude Code、Copilot Chat 这类 AI 编程工具使用。下面的内容都按“可以直接复制”的方式写，除了这段说明外，基本都使用用户自己的语气。
+这一页给 Codex、Cursor、Claude Code、Copilot Chat 这类 AI 编程工具使用。下面的内容都可以直接复制，正文尽量保留用户自己的口吻。
 
 ## 通用项目上下文
 
 ```text
-我正在维护 ZeroTermux。这个项目不是普通 Android Demo，而是基于 Termux 二次开发的 Android 多模块项目。
+我正在维护 ZeroTermux。这个项目基于 Termux 二次开发，是 Android 多模块项目。
 
-请你先按现有项目结构理解代码，不要一上来重构，也不要自己另起一套架构。
+请你先按现有项目结构理解代码，先不要重构，也不要自己另起一套架构。
 
 项目基本情况：
 - 主包名仍然是 com.termux。
@@ -29,8 +29,8 @@
 - targetSdk 28
 - NDK 29.0.14206865
 
-请不要随手升级 Gradle、AGP、Kotlin、SDK、NDK 或依赖版本，除非我明确要求。
-请不要改包名、sharedUserId、签名、bootstrap，除非我明确要求。
+不要随手升级 Gradle、AGP、Kotlin、SDK、NDK 或依赖版本，除非我明确要求。
+不要改包名、sharedUserId、签名、bootstrap，除非我明确要求。
 ```
 
 ## 开始改代码前先读这些文件
@@ -54,7 +54,7 @@
 3. 有没有涉及权限、assets 脚本、外部存储、Termux $PREFIX。
 4. 你准备怎么最小改动。
 
-在你说清楚这些之前，不要直接开始大面积改代码。
+先说清楚这些，再开始改代码。
 ```
 
 ## 新增或修改左侧菜单功能
@@ -62,7 +62,7 @@
 ```text
 我想新增或修改 ZeroTermux 左侧菜单里的功能。
 
-请你按现有菜单系统来做，不要自己新建入口体系。
+请按现有菜单系统来做，先不要新建入口体系。
 
 请先阅读：
 - app/src/main/java/com/termux/zerocore/config/mainmenu/MainMenuConfig.java
@@ -92,7 +92,7 @@
 ```text
 我想新增或修改 ZeroTermux 终端里的 zt 命令。
 
-请注意：zt 不是普通 alias，它会连接 Android 侧服务。不要只改 shell 脚本。
+请注意：zt 会连接 Android 侧服务，只改 shell 脚本不够。
 
 请先阅读：
 - app/src/main/java/com/termux/zerocore/config/ztcommand/ZTSocketService.java
@@ -170,7 +170,7 @@ ZeroTermux 常用外部目录是：
 请你确认：
 1. 哪个 Java/Kotlin 类会复制 assets 文件。
 2. 复制到哪个目标路径。
-3. 复制后是不是会向终端发送命令。
+3. 复制后是否会向终端发送命令。
 4. 相关命令是否在 CodeString 里。
 5. 脚本是否依赖 /sdcard/xinhao 或 $PREFIX。
 
@@ -200,7 +200,7 @@ ZeroTermux 常用外部目录是：
 ```text
 我要根据 ZeroTermux 源码补 Wiki 文档。
 
-请你不要写泛泛的功能介绍。每个页面尽量写清楚：
+请不要写泛泛的功能介绍。每个页面尽量写清楚：
 1. 功能入口在哪里。
 2. 源码里对应哪些类。
 3. 相关 assets 或资源文件在哪里。
@@ -209,7 +209,7 @@ ZeroTermux 常用外部目录是：
 6. 常见问题怎么排查。
 7. 改这个功能时开发者要注意什么。
 
-语气要像项目维护者写给后来人的说明，不要像 AI 模板。
+语气按项目维护文档来写，少用模板式总结。
 能写具体文件路径就写具体文件路径。
 不确定的地方要说不确定，不要编。
 ```
@@ -239,15 +239,15 @@ ZeroTermux 常用外部目录是：
    - 是否涉及 assets 脚本。
 
 5. 没做或没验证的内容
-   - 不要用“应该没问题”糊弄过去。
+   - 不要只写“应该没问题”。
 ```
 
 ## 一整段可直接复制的总提示词
 
 ```text
-我正在维护 ZeroTermux。这个项目是基于 Termux 二次开发的 Android 多模块项目，不是普通 Android Demo。
+我正在维护 ZeroTermux。这个项目基于 Termux 二次开发，是 Android 多模块项目。
 
-请你先理解现有结构，再做最小改动。不要一上来重构，不要自己新建一套架构，不要随手升级 Gradle、AGP、Kotlin、SDK、NDK 或依赖版本。不要改包名、sharedUserId、签名、bootstrap，除非我明确要求。
+请你先理解现有结构，再做最小改动。先不要重构，不要自己新建一套架构，不要随手升级 Gradle、AGP、Kotlin、SDK、NDK 或依赖版本。不要改包名、sharedUserId、签名、bootstrap，除非我明确要求。
 
 项目基本情况：
 - 主包名仍然是 com.termux。

@@ -1,6 +1,6 @@
 # 项目结构
 
-先把目录认清楚，再改代码。ZeroTermux 的代码有两条线：一条是原 Termux 的终端能力，一条是 ZeroTermux 后来加的功能。大多数需求都在第二条线上，不需要动终端模拟器核心。
+ZeroTermux 的代码主要分两块：原 Termux 的终端能力，以及 ZeroTermux 后续增加的功能。大多数业务需求在 `zerocore` 里处理，通常不需要改终端模拟器核心。
 
 ## 根目录
 
@@ -70,7 +70,7 @@
 | `drawable/` | 背景、shape、图标、图片资源 |
 | `raw/` | 音频、shader、脚本等原始资源 |
 
-## 三个最常改的位置
+## 常改位置
 
 | 需求 | 优先看 |
 | --- | --- |
@@ -78,4 +78,4 @@
 | 新增终端命令 | `zerocore/config/ztcommand/` |
 | 新增设置或页面 | `zerocore/settings/`、`res/layout/`、`AndroidManifest.xml` |
 
-如果你不确定该改哪里，先从 `MainMenuConfig.java` 找用户入口。用户能点到的功能，基本都能从那里追出去。
+不确定入口时，先从 `MainMenuConfig.java` 找用户入口。用户能点到的功能，基本都能从那里追出去。

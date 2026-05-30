@@ -1,6 +1,6 @@
 # 调试与排错
 
-这页按“真遇到问题时怎么查”来写。ZeroTermux 出错不要只盯着 Java 堆栈，很多问题其实是权限、目录、脚本、bootstrap、X11 资源或安装残留。
+ZeroTermux 的问题经常和权限、目录、脚本、bootstrap、X11 资源或安装残留有关。排查时除了 Java 堆栈，也要看终端输出、Logcat、文件路径和用户授权状态。
 
 ## Gradle Sync 失败
 
@@ -18,7 +18,7 @@ NDK: 29.0.14206865
 常见原因：
 
 - Android Studio 版本太旧。
-- JDK 不是 17 或更新。
+- JDK 版本低于 17。
 - SDK/NDK 没装全。
 - Maven/JitPack/GitHub 网络不可用。
 
@@ -29,7 +29,7 @@ NDK: 29.0.14206865
 1. 看日志里的下载 URL。
 2. 确认能访问 GitHub Release。
 3. 检查代理。
-4. 不要跳过 SHA-256 校验。
+4. 检查 SHA-256 校验结果。
 
 如果只是临时网络问题，重跑构建即可。
 
@@ -76,7 +76,7 @@ adb logcat | grep -i termux
 - Activity 没在 `AndroidManifest.xml` 注册。
 - 在后台线程操作 UI。
 - 没有权限就访问文件。
-- `mContext` 被释放或不是 Activity。
+- `mContext` 被释放，或当前上下文无法直接启动 Activity。
 - assets 路径写错，复制资源失败。
 
 ## `zt` 命令不识别
