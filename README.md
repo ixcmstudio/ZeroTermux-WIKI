@@ -70,12 +70,41 @@
 
 ## 🤖 给 AI 写文档用的提示词
 
-如果你想让 AI 帮忙补充 Wiki 内容，可以先把下面这段提示词复制给它。人只需要说明大体方向、要写的功能或要补的页面，具体结构和文字可以交给 AI 先生成，再人工检查。
+如果你想让 AI 帮忙补充 Wiki 内容，可以分两步给提示词。第一段让 AI 了解仓库环境并把项目拉到本地，第二段再说明要写什么内容。人只需要提供大体方向、功能名、已有步骤或报错现象，具体结构和文字可以先交给 AI 生成，再人工检查。
+
+### 1. 让 AI 了解项目环境
 
 ```text
 我正在维护 ZeroTermux-WIKI。
 
-这是 ZeroTermux 的 Wiki 文档仓库，主要给 ZeroTermux 用户阅读。请你根据我提供的大体方向和资料，帮我补充文档内容。
+这是 ZeroTermux 的 Wiki 文档仓库，主要给 ZeroTermux 用户阅读。它不是 ZeroTermux Android App 源码仓库。
+
+请先把项目拉到本地并了解结构：
+
+git clone https://github.com/ixcmstudio/ZeroTermux-WIKI.git
+cd ZeroTermux-WIKI
+npm install
+npm run docs:dev
+
+项目结构：
+- 文档正文在 docs/ 目录下。
+- VitePress 配置在 docs/.vitepress/config.mjs。
+- 首页内容在 docs/index.md。
+- README.md 是 GitHub 仓库介绍，不等同于网站首页。
+- 开发者文档在 docs/developer/。
+
+修改文档时请注意：
+1. 新增页面后，要检查 docs/.vitepress/config.mjs 里的 sidebar 是否需要增加入口。
+2. 修改站点浏览器标题时，看 defineConfig 里的 title。
+3. 只修改左上角显示名称时，看 themeConfig.siteTitle，不要误改 title。
+4. 首页展示内容优先改 docs/index.md。
+5. 不要把 node_modules、docs/.vitepress/cache、docs/.vitepress/dist 等本地生成内容提交进来。
+```
+
+### 2. 让 AI 按要求补充 Wiki 内容
+
+```text
+我接下来会告诉你要补充的 Wiki 内容。请你根据我提供的大体方向和资料，帮我生成适合放进 ZeroTermux-WIKI 的 Markdown 文档。
 
 我会告诉你：
 1. 要写哪个功能、教程或问题。
@@ -94,6 +123,9 @@
 6. 不要编造我没有提供的信息；不确定的地方请标出来。
 7. 如果内容适合拆成“使用方法 / 常见问题 / 注意事项”，请帮我拆好。
 8. 如果需要提醒用户备份、授权、联网、等待下载，请写清楚。
+9. 不要写“不是……而是……”“给后来人的一句话”“总结一下”“总之”这类明显 AI 味很重的句子。
+10. 不要用空泛形容词堆内容，比如“全面、强大、优雅、丝滑、极致、完善”。能写步骤就写步骤，能写现象就写现象。
+11. 不要用教育口吻训人，少写“你必须”“千万不要”。需要提醒风险时，直接说明会发生什么。
 
 输出时请给我：
 1. 建议放在哪个页面，或建议新建什么文件名。
